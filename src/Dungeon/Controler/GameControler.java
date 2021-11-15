@@ -6,10 +6,7 @@ import dungenModel.Player;
 import dungenModel.mapRooms;
 import java.util.ArrayList;
 
-/**
- *
- * @author mahnaz :phehe
- */
+
 public class GameControler implements java.io.Serializable, ControllerInterface {
 
     private Player player;
@@ -61,16 +58,16 @@ public class GameControler implements java.io.Serializable, ControllerInterface 
         String result = "";
         switch (com) {
 
-            case "attack":
+            case "Attack":
                 result = playerAttack(5);
                 break;
-            case "pickup":
+            case "Pickup":
                 result = pickup();
                 break;
-            case "help":
+            case "Help":
                 result = helpComando();
                 break;
-            case "quit":
+            case "Quit":
                 result = gameOver();
                 break;
             default:
@@ -139,7 +136,7 @@ public class GameControler implements java.io.Serializable, ControllerInterface 
 
     public String helpComando() {
         String temp = "";
-        String[] helpList = {"Here is this commando you can use", "help", "attack", "pickup", "load", "save", "newPlay", "quit", "use", "north", "south", "west", "east"};
+        String[] helpList = {"Here is this commando you can use", "help", "Attack", "Pickup", "Load", "Save", "NewPlay", "Quit", "use", "north", "south", "west", "east"};
         for (String string : helpList) {
             temp += string + "\n";
         }
@@ -212,7 +209,7 @@ public class GameControler implements java.io.Serializable, ControllerInterface 
                 return "your hit points increased and you have:  " + amount;
 
             } else {
-                return " you can`t use it for nothing ";
+                return "you can`t use it for nothing ";
             }
         } else {
             return "you can use this i this time";
@@ -220,13 +217,13 @@ public class GameControler implements java.io.Serializable, ControllerInterface 
     }
 
     public String gameOver() {
-        return " game over "
-                + "\n your hit point is: " + player.getHitPoints()
-                + "\n your Damage is: " + player.getDamage()
-                + "\n your hit point is: " + player.getLevel()
-                + "\n Monster hit point is: " + rMap.getCurrentRoom().getMonster().getHitPoints()
-                + "\n Monster damage is: " + rMap.getCurrentRoom().getMonster().getDamager()
-                + "\nyour items is:" + ipc.toString();
+        return " Game over "
+                + "\nYour hit point is: " + player.getHitPoints()
+                + "\nYour Damage is: " + player.getDamage()
+                + "\nYour hit point is: " + player.getLevel()
+                + "\nMonster hit point is: " + rMap.getCurrentRoom().getMonster().getHitPoints()
+                + "\nMonster damage is: " + rMap.getCurrentRoom().getMonster().getDamager()
+                + "\nYour items is:" + ipc.toString();
 
     }
 

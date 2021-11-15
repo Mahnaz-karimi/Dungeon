@@ -1,6 +1,4 @@
 package dungen.View;
-
-
 import Dungeon.Controler.GameControler;
 import javax.swing.JFrame;
 
@@ -14,9 +12,7 @@ public class DungenGamestartMain {
        Frame1.setVisible(true);              
        Frame1.getContentPane().add(new JPanelLogInDungeonGame());        
        Frame1.pack();     
-    }
-    
-                          
+    }         
     
    
 }

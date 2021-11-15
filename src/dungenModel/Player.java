@@ -69,7 +69,7 @@ public class Player implements java.io.Serializable {
 
     @Override
     public String toString() {
-        return "Player name:" + name + "\n hitPoints: " + hitPoints + "\n Damage:" + Damage + "\n level:" + level;
+        return "Player name:" + name + "\nHitPoints: " + hitPoints + "\nDamage:" + Damage + "\nLevel:" + level;
     }
 
 }

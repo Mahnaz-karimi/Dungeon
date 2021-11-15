@@ -15,14 +15,11 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
-/**
- *
- * @author Bruger
- */
+
 public class JPanelDungeonGame extends javax.swing.JPanel {
 
     private GameControler gc;
-    private String[] commandoList = {"help", "attack", "pickup", "load", "save", "newPlay", "quit", "use"};
+    private String[] commandoList = {"Help", "Attack", "Pickup", "Load", "Save", "NewPlay", "Quit", "Use"};
 
     public JPanelDungeonGame(String name) {
 
@@ -36,7 +33,20 @@ public class JPanelDungeonGame extends javax.swing.JPanel {
 
             jComboBoxPlayerItems.addItem(items.getNavn());
         }
-        jTextDirectionRoom.setText("The door opens and a staircase appears in the dark and a faule rotten smell amorous from whit in.\n As you walk down then staircase you feel a unpleasant presence,\n like someone is looking at you,\n and yet you are alone.\n As your reaches the end of the staircase you find yourself in a little room,\n slightly lithe from a few torches.\nThe room reeks of rotten flesh, and the floor is covered in dry blood.\n the room contains 2 doors one I the eastern corner and one in the wastes corner.\n What will you do");
+        jTextDirectionRoom.setText("This is where a Dungeon begins" +
+                "\nThere are buttons that pointing"+
+                "\nNorth, South, Sast and West\n"+ 
+                "As you enter each room,"
+                + "\nroom information will appears"
+                + "\nin the box on the right."
+                + "\nInside each room may be a treasure"
+                + "\nthat you can add to your wealth"
+                + "\nor there may be monster "
+                + "\nthat will attack you to kill you."
+                + "\nIf the monster don't kill you,"
+                + "\nyou will reach the last room "
+                + "\nand win the Dungeon game"
+                + "\nand your score will be recorded.");
         jTextPlayer.setText(gc.playerToString());
         jTextAMonsterAndtems.setText(gc.currentRoomMonsterToString());
     }
@@ -62,7 +72,8 @@ public class JPanelDungeonGame extends javax.swing.JPanel {
         jTextAreaHelpCommando = new javax.swing.JTextArea();
         jButtonAddItemstoComboboks = new javax.swing.JButton();
 
-        jTextDirectionRoom.setEditable(false);
+        setAutoscrolls(true);
+
         jTextDirectionRoom.setColumns(20);
         jTextDirectionRoom.setRows(5);
         jScrollPane1.setViewportView(jTextDirectionRoom);
@@ -137,31 +148,33 @@ public class JPanelDungeonGame extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(jScrollPane2))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jComboBoxPlayerItems, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonAddItemstoComboboks))
-                        .addGap(96, 96, 96)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jButtonAddItemstoComboboks, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboBoxPlayerItems, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(108, 108, 108)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButtonSouth)
                             .addComponent(jButtonNorth))
                         .addGap(78, 78, 78))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBoxACtionList, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jComboBoxACtionList, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButtonWest)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(97, 97, 97)
                                 .addComponent(jButtonEast))
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
@@ -170,30 +183,32 @@ public class JPanelDungeonGame extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonNorth)
-                            .addComponent(jComboBoxPlayerItems, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(13, 13, 13)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jComboBoxACtionList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jButtonNorth)
+                                    .addComponent(jComboBoxPlayerItems, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(13, 13, 13)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButtonEast)
                             .addComponent(jButtonWest))
                         .addGap(16, 16, 16)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonSouth)
-                            .addComponent(jButtonAddItemstoComboboks))
-                        .addGap(80, 80, 80))
+                        .addComponent(jButtonSouth)
+                        .addGap(5, 5, 5)
+                        .addComponent(jButtonAddItemstoComboboks)
+                        .addGap(52, 52, 52))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jComboBoxACtionList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane4))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42))))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -242,12 +257,12 @@ public class JPanelDungeonGame extends javax.swing.JPanel {
 
         if (gc.isPlayerAlive() && gc.haveNotEndTreasureChest()) {
             String choose = jComboBoxACtionList.getSelectedItem().toString();
-            if (choose.equals("help")) {
+            if (choose.equals("Help")) {
                 jTextAreaHelpCommando.setText(gc.command(choose));
             } else {
                 jTextDirectionRoom.setText(gc.command(choose));
             }
-            if (choose.equals("save")) {
+            if (choose.equals("Save")) {
                 try {
                     FileOutputStream fileOut = new FileOutputStream("gc.ser");
                     ObjectOutputStream out = new ObjectOutputStream(fileOut);
@@ -260,11 +275,11 @@ public class JPanelDungeonGame extends javax.swing.JPanel {
                     fileOut.close();
                     System.out.printf("Serialized data is saved in /tmp/employee.ser");
                 } catch (IOException i) {
-                    System.out.println("there is some ting wrong");;
+                    System.out.println("There is some ting wrong");;
                 }
             }
 
-            if (choose.equals("load")) {
+            if (choose.equals("Load")) {
 
                 try {
                     FileInputStream fileIn = new FileInputStream("gc.ser");
@@ -284,7 +299,7 @@ public class JPanelDungeonGame extends javax.swing.JPanel {
                     return;
                 }
             }
-            if (choose.equals("newPlay")) {
+            if (choose.equals("NewPlay")) {
                 JFrame f = (JFrame) SwingUtilities.getWindowAncestor(this);
                 f.remove(this);
                 JPanelLogInDungeonGame jpl;

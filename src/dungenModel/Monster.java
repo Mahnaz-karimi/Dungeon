@@ -1,7 +1,4 @@
-
 package dungenModel;
-
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,8 +39,8 @@ public class Monster implements java.io.Serializable{
     
     @Override                                             
     public String toString() {
-        return "Monster{name=" + name + "\nDiscribtion=" + Discribtion + "\ndamager=" + damager + "\n hitPoints=" + hitPoints + 
-                "\n item1="+ monsterItems.toString();         
+        return "Monster{name= " + name + "\nDiscribtion= " + Discribtion + "\nDamager= " + damager + "\nHitPoints= " + hitPoints + 
+                "\nItem1= "+ monsterItems.toString();         
     }
     
     public void woundPlayerDecreaseDamageMonster(int damage) {        

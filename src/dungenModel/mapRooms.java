@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dungenModel;
-
 import Dungeon.Controler.ControllerInterface;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,25 +21,25 @@ public class mapRooms implements java.io.Serializable {
         List itemList = setDefaultRoomItems();
         List monsterList = setDefaultMonster(itemList);  
         
-        Room r1 = new Room("Start Room", "it is starting. historie is ", null);
-        Room r2 = new Room("Room 2", "it is warm", null);
-        Room r3 = new Room("Room 3", "it is cold", pickMonster(monsterList));
-         r4 = new Room("Room 4", "it is dark ", null);
-        Room r5 = new Room("Room 5 ", "it is dark and smelly", null);
-        Room r6 = new Room("Room 6 ", "it is warm and nasty", null);
-        Room r7 = new Room("Room 7 ", "ist smell like rot", null);
-        Room r8 = new Room("Room 8", "the floor i coverd in blood", pickMonster(monsterList));
-        Room r9 = new Room("Room 9 ", "the walls is coverd in sod", null);
-        Room r10 = new Room("Room 10 ", "its cold and smelly", pickMonster(monsterList));
-        Room r11 = new Room("Room 11 ", "this room feels weird ", null);
-        Room r12 = new Room("Room 12", "this is a evil room", pickMonster(monsterList));
+        Room r1 = new Room("Start Room", "It is starting. historie is ", null);
+        Room r2 = new Room("Room 2", "It is warm", null);
+        Room r3 = new Room("Room 3", "It is cold", pickMonster(monsterList));
+         r4 = new Room("Room 4", "It is dark ", null);
+        Room r5 = new Room("Room 5 ", "It is dark and smelly", null);
+        Room r6 = new Room("Room 6 ", "It is warm and nasty", null);
+        Room r7 = new Room("Room 7 ", "It's smell like rot", null);
+        Room r8 = new Room("Room 8", "The floor i coverd in blood", pickMonster(monsterList));
+        Room r9 = new Room("Room 9 ", "The walls is coverd in sod", null);
+        Room r10 = new Room("Room 10 ", "It's cold and smelly", pickMonster(monsterList));
+        Room r11 = new Room("Room 11 ", "This room feels weird ", null);
+        Room r12 = new Room("Room 12", "This is a evil room", pickMonster(monsterList));
         Room r13 = new Room("Room 13", "I think somone died in here", null);
-        Room r14 = new Room("Room 14 ", "this room feels unplesant", null);
-        Room r15 = new Room("Room 15", "it smells like dead animals ", null);
-        Room r16 = new Room("Room 16 ", "there is stanges writing on the wall", null);
-        Room r17 = new Room("Room 17", "the floor is all sticky", null);
-        Room r18 = new Room("Room 18", "strangs sounds in this room", null);
-        Room r19 = new Room("Room 19 ", "this room feels evil", pickMonster(monsterList));
+        Room r14 = new Room("Room 14 ", "This room feels unplesant", null);
+        Room r15 = new Room("Room 15", "It smells like dead animals ", null);
+        Room r16 = new Room("Room 16 ", "There is stanges writing on the wall", null);
+        Room r17 = new Room("Room 17", "The floor is all sticky", null);
+        Room r18 = new Room("Room 18", "Strangs sounds in this room", null);
+        Room r19 = new Room("Room 19 ", "This room feels evil", pickMonster(monsterList));
         Room r20 = new Room("Room 20 ", "Like heel on earth", pickMonster(monsterList));
 
         r1.north = r4;

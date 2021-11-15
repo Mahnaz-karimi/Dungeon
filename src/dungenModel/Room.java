@@ -1,13 +1,9 @@
 package dungenModel;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/**
- *
- * @author pelo
- */
+
 public class Room implements java.io.Serializable{
 
     private String name;
@@ -56,7 +52,7 @@ public class Room implements java.io.Serializable{
                 "\nMonster HitPoints :" +monster.getHitPoints();}
                 
                 
-            return "there is not any monster";
+            return "There is not any monster";
     }
 
 }
